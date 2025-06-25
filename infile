@@ -1,0 +1,11 @@
+total 72
+drwxr-xr-x 4 vloureir vloureir  4096 Jun 24 22:08 .
+drwxr-xr-x 6 vloureir vloureir  4096 Jun 24 22:08 ..
+drwxr-xr-x 8 vloureir vloureir  4096 Jun 24 22:08 .git
+-rw-r--r-- 1 vloureir vloureir   160 Jun 24 22:08 Makefile
+-rw-r--r-- 1 vloureir vloureir   176 Jun 24 22:08 README.md
+-rw-r--r-- 1 vloureir vloureir   108 Jun 24 22:08 fn_allowed
+-rw-r--r-- 1 vloureir vloureir     0 Jun 24 22:08 infile
+drwxr-xr-x 2 vloureir vloureir  4096 Jun 24 22:08 output
+-rwxr-xr-x 1 vloureir vloureir 22008 Jun 24 22:08 pipex
+-rwxr-xr-x 1 vloureir vloureir 18826 Jun 24 22:08 test.sh
