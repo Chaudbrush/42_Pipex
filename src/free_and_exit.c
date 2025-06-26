@@ -6,7 +6,7 @@
 /*   By: vloureir <vloureir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/21 13:51:19 by vloureir          #+#    #+#             */
-/*   Updated: 2025/06/25 11:00:06 by vloureir         ###   ########.fr       */
+/*   Updated: 2025/06/26 11:42:48 by vloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	free_array(char **array)
 {
 	int	i;
 
+	if (array == NULL)
+		return ;
 	i = -1;
 	while (array[++i])
 		free(array[i]);
@@ -53,11 +55,16 @@ void	ft_close_fds(int *fds)
 {
 	int	i;
 
+	if (fds == NULL)
+		return ;
 	i = 0;
 	while (i < 2)
 	{
 		if (fds[i] > 2)
+		{
 			close(fds[i]);
+			fds[i] = -1;
+		}
 		i++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: vloureir <vloureir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 12:40:17 by vloureir          #+#    #+#             */
-/*   Updated: 2025/06/25 09:32:58 by vloureir         ###   ########.fr       */
+/*   Updated: 2025/06/26 18:27:13 by vloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,14 @@ void	first_child(t_data *data);
 void	second_child(t_data *data);
 
 // Data Init
+char	*no_env(char *cmd);
 int		get_index(t_data *data);
 void	get_commands(t_data *data);
-char	*check_access(char **args);
 char	**organize_env(char **envp);
 char	*get_correct_path(char **cmds, char **envp);
 
 // Parse
+char	*check_access(char **args);
 int		open_files(t_data *data, int argc, char **argv);
 void	parse_input(int argc, char **argv, char **envp);
 void	ft_init_data(t_data *data, int argc, char **argv, char **envp);

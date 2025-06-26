@@ -6,7 +6,7 @@
 /*   By: vloureir <vloureir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 20:48:06 by vloureir          #+#    #+#             */
-/*   Updated: 2025/06/25 11:13:42 by vloureir         ###   ########.fr       */
+/*   Updated: 2025/06/26 18:26:50 by vloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,17 @@ int	open_files(t_data *data, int argc, char **argv)
 	if (data->opened_fds[1] == -1)
 		perror(argv[4]);
 	return (0);
+}
+
+char	*check_access(char **args)
+{
+	int	i;
+
+	i = -1;
+	while (args[++i])
+	{
+		if (access(args[i], X_OK) == 0)
+			return (args[i]);
+	}
+	return (NULL);
 }

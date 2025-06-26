@@ -6,7 +6,7 @@
 #    By: vloureir <vloureir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 20:29:48 by vloureir          #+#    #+#              #
-#    Updated: 2025/06/25 09:52:59 by vloureir         ###   ########.fr        #
+#    Updated: 2025/06/24 07:17:21 by vloureir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME := libft.a
 
 CC := cc
 
-CFLAGS := -Wall -Wextra -Werror -g
+CFLAGS := -Wall -Wextra -Werror
 
 SRC := ft_split.c ft_strdup.c ft_strjoin.c ft_strlen.c ft_strncmp.c \
 		ft_putstr_fd.c ft_putchar_fd.c env_split.c

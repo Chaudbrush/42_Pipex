@@ -1,5 +1,0 @@
-first.c$$
-this is not$$
-second.c$$
-not not$$
-third.c

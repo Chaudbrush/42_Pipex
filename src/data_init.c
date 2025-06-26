@@ -6,7 +6,7 @@
 /*   By: vloureir <vloureir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 11:35:51 by vloureir          #+#    #+#             */
-/*   Updated: 2025/06/24 21:58:48 by vloureir         ###   ########.fr       */
+/*   Updated: 2025/06/26 18:26:34 by vloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,6 @@ char	**organize_env(char **envp)
 	return (NULL);
 }
 
-char	*check_access(char **args)
-{
-	int	i;
-
-	i = -1;
-	while (args[++i])
-	{
-		if (access(args[i], X_OK) == 0)
-			return (args[i]);
-	}
-	return (NULL);
-}
-
 int	get_index(t_data *data)
 {
 	if (ft_strncmp(data->argv[1], "here_doc", 9) == 0)
@@ -55,15 +42,35 @@ int	get_index(t_data *data)
 		return (2);
 }
 
+char	*no_env(char *cmd)
+{
+	char	*tmp;
+	
+	if (access(cmd, X_OK) == 0)
+		return (ft_strdup(cmd));
+	else
+	{
+		tmp = ft_strjoin("/usr/bin/", cmd);
+		if (access(tmp, X_OK) == 0)
+			return (tmp);
+		free(tmp);
+	}
+	return (ft_strdup(cmd));
+}
+
 char	*get_correct_path(char **cmds, char **envp)
 {
 	int		i;
 	char	*tmp;
 
-	if (cmds == NULL || cmds[0] == NULL)
+	if (cmds == NULL)
 		return (NULL);
+	if (cmds[0] == NULL)
+		return (ft_strdup("Empty String"));
+	if (envp == NULL)
+		return (no_env(cmds[0]));
 	i = 0;
-	while (envp && envp[i])
+	while (envp[i])
 	{
 		tmp = ft_strjoin(envp[i], cmds[0]);
 		if (access(tmp, X_OK) == 0)
