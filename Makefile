@@ -6,7 +6,7 @@
 #    By: vloureir <vloureir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/21 08:22:31 by vloureir          #+#    #+#              #
-#    Updated: 2025/06/24 16:18:16 by vloureir         ###   ########.fr        #
+#    Updated: 2025/06/26 21:07:59 by vloureir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,11 @@ endif
 
 NAME := pipex
 
-SRC := $(wildcard src/*.c)
+SRC := src/data_init.c src/free_and_exit.c src/main.c src/parse.c
 
 OBJ := $(SRC:.c=.o)
 
-CFLAGS := 
-#-Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra -Werror
 
 CC := cc
 

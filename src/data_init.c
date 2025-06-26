@@ -6,7 +6,7 @@
 /*   By: vloureir <vloureir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 11:35:51 by vloureir          #+#    #+#             */
-/*   Updated: 2025/06/26 18:26:34 by vloureir         ###   ########.fr       */
+/*   Updated: 2025/06/26 21:07:16 by vloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	get_index(t_data *data)
 char	*no_env(char *cmd)
 {
 	char	*tmp;
-	
+
 	if (access(cmd, X_OK) == 0)
 		return (ft_strdup(cmd));
 	else
